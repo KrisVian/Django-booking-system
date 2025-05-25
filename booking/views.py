@@ -129,8 +129,8 @@ def userUpdateSubmit(request, id):
     reservation = request.session.get('reservation')
 
     hour = checkEditTime(times, day, id)
-    appointment = Reservation.objects.get(pk=id)
-    userSelectedTime = appointment.time
+    reservation = Reservation.objects.get(pk=id)
+    userSelectedTime = reservation.time
     if request.method == 'POST':
         time = request.POST.get("time")
         date = dayToWeekday(day)
@@ -155,7 +155,7 @@ def userUpdateSubmit(request, id):
                 else:
                     messages.success(request, "The selected date is incorrect.")
             else:
-                    messages.success(request, "The selected date isn't in the correct time period.")
+                    messages.success(request, "The selected date isn't in the correct time.")
         else:
             messages.success(request, "Please select.")
         return redirect('userPanel')
@@ -210,8 +210,8 @@ def checkTime(times, day):
 
 def checkEditTime(times, day, id):
     x = []
-    appointment = Reservation.objects.get(pk=id)
-    time = appointment.time
+    reservation = Reservation.objects.get(pk=id)
+    time = reservation.time
     for k in times:
         if Reservation.objects.filter(day=day, time=k).count() < 1 or time == k:
             x.append(k)
