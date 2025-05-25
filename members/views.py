@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, logout, login
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterUserForm
@@ -22,10 +22,10 @@ def login_user(request):
     else:
         return render(request, 'authenticate/login.html', {})
     
-    def logout_user(request):
-        logout(request)
-        messages.success(request, "Signed out successfully")
-        return redirect('index')
+def logout_user(request):
+    logout(request)
+    messages.success(request, "Sign out succesfully")
+    return redirect('index')
 
 def register_user(request):
     if request.method == "POST":
