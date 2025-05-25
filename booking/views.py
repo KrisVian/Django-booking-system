@@ -144,7 +144,7 @@ def userUpdateSubmit(request, id):
                                 user = user,
                                 reservation = reservation,
                                 day = day,
-                                time =time,
+                                time = time,
                             )
                             messages.success(request, "Reservation edited.")
                             return redirect('index')
