@@ -13,7 +13,7 @@
 
          <div>
             <h3 class="">Select reservation:</h3>
-            <select class="form-select fs-3" name="service">
+            <select class="form-select fs-3" name="reservation">
                 <option value="Tiny room">Tiny room</option>
                 <option value="Medium room">Medium room</option>
                 <option value="Large room">Large room</option>
@@ -39,7 +39,7 @@
 
 <div class="shadow p-4 mb-5 bg-body bg-body rounded text-black m-5 text-center fPersian">
     <h1 class="text-danger">Editing reservation is only available 1 day before reserved time</h1>
-    <a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">Return to user panel</a>
+    <a href="{% url 'userPanel' %}" class="btn btn-primary mt-5">Return to User panel</a>
 </div>
 
 {% endif %}

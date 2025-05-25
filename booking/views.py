@@ -6,7 +6,7 @@ from django.contrib import messages
 def index(request):
     return render(request, "index.html",{})
 
-def booking(request):
+def reservation(request):
     weekdays = validWeekday(26)
 
     validateWeekdays = isWeekdayValid(weekdays)
@@ -16,7 +16,7 @@ def booking(request):
         day = request.POST.get('day')
         if reservation == None:
             messages.success(request, "Choose reservation.")
-            return redirect('booking')
+            return redirect('reservation')
         
         request.session['day'] = day
         request.session['reservation'] = reservation
@@ -168,7 +168,7 @@ def userUpdateSubmit(request, id):
 def teacherPanel(request):
     today = datetime.today()
     minDate = today.strftime('%Y-%m-%d')
-    deltatime = today + timedelta(days=21)
+    deltatime = today + timedelta(days=26)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     maxDate = strdeltatime
     items = Reservation.objects.filter(day__range=[minDate, maxDate]).order_by('day', 'time')

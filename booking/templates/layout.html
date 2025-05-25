@@ -13,7 +13,7 @@
         <nav class="navbar bg-white navbar-white navbar-expand-lg shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand  cHover cGreen fs-2" href="{% url 'index' %}">
-                    User
+                    Welcome
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,24 +24,24 @@
                             <a class="nav-link active cHover" aria-current="page" href="{% url 'index' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active cHover" href="#contact">Contact Us</a>
+                            <a class="nav-link active cHover" href="#contact">Contact us</a>
                         </li>     
                         <li class="nav-item">
-                            <a class="nav-link active cHover" href="{% url 'booking' %}">Online Reserving</a>
+                            <a class="nav-link active cHover" href="{% url 'reservation' %}">Online reserving</a>
                         </li>                   
                         {% if user.is_authenticated %}
                         <!--Teacher Link-->
                         <li class="nav-item">
-                            <a class="nav-link active cHover" href="{% url 'staffPanel' %}">Teacher Panel</a>
+                            <a class="nav-link active cHover" href="{% url 'teacherPanel' %}">Teacher panel</a>
                         </li> 
                         <li class="nav-item dropdown me-3 fs-5">
                             <a class="nav-link active dropdown-toggle cHover" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               User
                             </a>
                             <ul class="dropdown-menu  border zNav">
-                              <li><a class="dropdown-item" href="{% url 'userPanel' %}">User Panel</a></li>
+                              <li><a class="dropdown-item" href="{% url 'userPanel' %}">User panel</a></li>
                               <li><hr class=""></li>
-                              <li><a class="dropdown-item" href="{% url 'logout' %}">Sign Out</a></li>
+                              <li><a class="dropdown-item" href="{% url 'logout' %}">Sign out</a></li>
                             </ul>
                         </li>
                         {% else %}
@@ -55,7 +55,6 @@
         </nav>
         
 
-        <!--Messages Start-->
         {% if messages %}
         {% for message in messages %}
             <div class="alert alert-success  alert-dismissible fade show text-center " role="alert">
@@ -64,7 +63,7 @@
             </div>
         {% endfor %}
         {% endif %}
-        <!--Messages End-->
+
 
     </header>
 
@@ -75,29 +74,24 @@
         <div class="container-fluid pt-3">
             <section class="">
                 <div class="container text-center text-md-start mt-5">
-                  <!-- Grid row -->
                   <div class="row mt-3 text-center">
             
-                    <!-- Grid column -->
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
                         <h5 class="text-uppercase fw-bold mb-4 textGradient" id="contact">
-                            Contact Us
+                            Contact us
                         </h5>
                         <p>
-                            <a href="tel: 12345678" class=""><span class="cBlue">Number</span></a>
+                            <a href="number" class=""><span class="cBlue">Number</span></a>
                         </p>
                         <p>
-                            <a class="uLine cHover" href="{% url 'booking' %}" >Online Reserving</a>
+                            <a class="uLine cHover" href="{% url 'reservation' %}" >Online reserving</a>
                         </p>
                     </div>
-                    <!-- Grid column -->
                     
-                    <!-- Reservation links Regular -->
+
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
                         <h5 class="text-uppercase fw-bold mb-4 textGradient">
-                            Booking
+                            Reservations
                         </h5>
                         <p>
                             <a href="#!" class="uLine">Tiny room</a>
@@ -109,9 +103,7 @@
                             <a href="#!" class="uLine">Large room</a>
                         </p>
                     </div>
-                    <!-- Reservation links Regular -->
                   </div>
-                  <!-- Grid row -->
                 </div>
               </section>
         </div>
